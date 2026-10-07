@@ -7,13 +7,14 @@ import { Suspense } from 'react';
 import classe from './loading.module.css'
 
 
-async function Meals(){
+async function Meals() {
     const meals = await getMeals();
+    //console.log(meals);
 
-    return <MealsGrid meals={meals}/>
+    return <MealsGrid meals={meals} />
 }
 
-export default async function MealsPage(){
+export default async function MealsPage() {
 
     return <>
         <header className={classes.header}>
@@ -25,16 +26,16 @@ export default async function MealsPage(){
             <p>Choose your ...</p>
             <p className={classes.cta}>
                 <Link href='/meals/share'>
-                Share your favourite recipe
+                    Share your favourite recipe
                 </Link>
             </p>
 
         </header>
 
-            <Suspense fallback={<p className={classe.loading}>Fetching details....</p>}>
-                <Meals/>
-            </Suspense>
-        
+        <Suspense fallback={<p className={classe.loading}>Fetching details....</p>}>
+            <Meals />
+        </Suspense>
+
     </>
-    
+
 }
