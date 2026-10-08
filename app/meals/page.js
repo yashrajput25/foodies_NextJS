@@ -23,7 +23,7 @@ export default async function MealsPage() {
                     by you
                 </span>
             </h1>
-            <p>Choose your ...</p>
+            <p>Choose your favorite recipe and cook it yourself. It is easy and fun!</p>
             <p className={classes.cta}>
                 <Link href='/meals/share'>
                     Share your favourite recipe
@@ -32,7 +32,7 @@ export default async function MealsPage() {
 
         </header>
 
-        <Suspense fallback={<p className={classe.loading}>Fetching details....</p>}>
+        <Suspense fallback={<p className={classe.loading}>Fetching meals....</p>}>
             <Meals />
         </Suspense>
 
